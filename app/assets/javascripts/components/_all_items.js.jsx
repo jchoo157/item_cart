@@ -1,4 +1,7 @@
 var AllItems = React.createClass({
+  handleDelete() {
+    console.log('delete item clicked');
+  },
 
   render() {
     var items = this.props.items.map((item) => {

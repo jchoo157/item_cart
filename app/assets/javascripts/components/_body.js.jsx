@@ -8,8 +8,14 @@ var Body = React.createClass({
     this.setState({ items: newState })
   },
 
-  handleDelete() {
-    console.log('in handle delete');
+  handleDelete(id) {
+    $.ajax({
+      url: '/api/v1/items/${id}',
+      type: 'DELETE',
+      success(response) {
+        console.log('successfully removed item')
+      }
+    });
   },
 
   componentDidMount() {
